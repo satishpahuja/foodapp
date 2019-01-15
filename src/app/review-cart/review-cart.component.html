@@ -1,0 +1,14 @@
+<h1>Review Your Order</h1>
+
+<div *ngFor='let foodItem of cartDetails.addedItems'>
+    <span> {{foodItem.foodName}}</span> <span> {{foodItem.price}}</span>
+    <span> {{foodItem.quantity}}</span>
+    <input type="button" value="+" (click)="addItemToCart(foodItem)" />
+    <input type="button" value="-" (click)="deleteItemFromCart(foodItem)" />
+</div>
+<p>Sub Total----{{cartDetails.subTotal}}</p>
+<p>CGST @2.5 % --------{{cartDetails.cgst}}</p>
+<p>SGST @2.5 % --------{{cartDetails.sgst}}</p>
+<p>Total -----{{cartDetails.totalPrice}}</p>
+
+<a (click)="submitOrder()" class="btn btn-success">Submit Order</a>

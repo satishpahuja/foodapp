@@ -1,0 +1,8 @@
+<p>
+  <select class="combobox input-large form-control">
+    <option value="Select Area" selected="selected">Select Area</option>
+      <option *ngFor='let servingLocation of servingLocations' [value]="servingLocation.locationId">{{servingLocation.locationName}}</option>
+  </select>
+
+  <button class="contacts-btn" (click)="showMenu()">Show Menu</button>
+</p>

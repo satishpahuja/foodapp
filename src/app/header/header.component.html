@@ -1,0 +1,82 @@
+<p>
+	<a href="/"> Home</a>
+</p>
+<p>
+	<a data-toggle="modal" data-target="#emailIdModal">Login</a>
+</p>
+<div id="emailIdModal" class="modal fade in" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					&times;</button>
+				<h4>Login</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-row">
+					<div class="form-group">
+						<label class="sr-only" for="loginEmail">Email</label><input type="text" (ngModel)=emailId class="form-control input-sm"
+						 placeholder="Email" id="email" name="email">
+						<a data-toggle="modal" [attr.data-target]="'#' + modalName" (click)="checkExistanceOfEmailIdAndShowModal()">Next</a>
+					</div>
+					<button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Cancel</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="passwordModal" class="modal fade in" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;</button>
+					<h4>Password</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-inline">
+						<div class="form-group">
+							<label class="sr-only" for="loginPassword">Password</label><input type="password" class="form-control input-sm"
+							 placeholder="Password" id="loginPassword" name="loginPassword">
+							<button type="submit" class="btn btn-info btn-xs">Sign In</button>
+						</div>
+						<button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Cancel</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="signupModal" class="modal fade in" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;</button>
+					<h4>Sign Up</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-inline">
+						<div class="form-group">
+
+							<label class="sr-only" for="signUpName">Name</label><input type="text" class="form-control input-sm" placeholder="Complete Name"
+							 id="signUpName" name="signUpName">
+							<div><label class="sr-only" for="signUpemail">Email</label><input type="text" class="form-control input-sm"
+								 placeholder="Email" id="signUpemail" name="signUpemail">
+							</div>
+							<div> <label class="sr-only" for="signupPassword">Password</label><input type="password" class="form-control input-sm"
+								 placeholder="Password" id="signupPassword" name="signupPassword">
+							</div>
+							<div> <label class="sr-only" for="confirmSignUppassword">Confirm Password</label><input type="password" class="form-control input-sm"
+								 placeholder="Confirm Password" id="confirmSignUppassword" name="confirmSignUppassword">
+							</div>
+							<div> <button type="submit" class="btn btn-info btn-xs">Sign Up</button>
+							</div>
+						</div>
+						<button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Cancel</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

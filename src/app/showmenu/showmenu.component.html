@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-2">This side will contain all the food items
+      category</div>
+
+    <div class="col-lg-6">
+      <div *ngFor='let foodItem of foodItems'>
+        <div class="col-md-2 column productbox">
+          <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" class="img-responsive">
+          <div class="producttitle">{{foodItem.foodName}}</div>
+          <div class="productprice">
+            <div class="pull-right">
+              <a (click)="addItemToCart(foodItem)" class="btn btn-danger btn-sm" role="button">ADD</a>
+            </div>
+            <div class="pricetext">{{foodItem.price}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">Cart
+
+      <div *ngFor='let foodItem of cartDetails.addedItems'>
+        <span> {{foodItem.foodName}}</span> <span> {{foodItem.price}}</span>
+        <span> {{foodItem.quantity}}</span>
+        <input type="button" value="+" (click)="addItemToCart(foodItem)" />
+        <input type="button" value="-" (click)="deleteItemFromCart(foodItem)" />
+      </div>
+      <p>Sub Total----{{cartDetails.subTotal}}</p>
+      <p>CGST @2.5 % --------{{cartDetails.cgst}}</p>
+      <p>SGST @2.5 % --------{{cartDetails.sgst}}</p>
+      <p>Total -----{{cartDetails.totalPrice}}</p>
+
+      <a routerLink="/reviewcart" class="btn btn-success" *ngIf="isEligibleForOrder" (click)="proceedToCheckOut">ProceedToCheckOut</a>
